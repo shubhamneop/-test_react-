@@ -21,7 +21,7 @@ class App extends Component {
       const person = {
           ...this.state.persons[personIndex]
       };
-      person.name = event.target.value;
+      person.name = event.target.value.toUpperCase();
       const persons = [...this.state.persons];
       persons[personIndex] = person;
 
