@@ -3,20 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import Radium from 'radium';
 import Person from './Person/Person';
-import styled from 'styled-components';
-
-const StyleButton = styled.button`
-background-color: ${props => props.alt ? 'red' : 'green'};
-color: white;
-font: inherit;
-border: 1px solid blue;
-padding: 8px;
-cursor: pointer;
-
-&:hover {
-  background-color : ${props => props.alt ? 'lightred' : 'lightgreen'};
-  color: black;
-}`;
 
 class App extends Component {
   state = {
@@ -97,8 +83,8 @@ render() {
     <div className="App">
       <h1>React</h1>
        <p className={classes.join(' ')}>This is style demo</p>
-      <StyleButton alt={this.state.showPerson}
-          onClick={this.togglePersonHandler}>Toggle Person</StyleButton>
+      <button
+          onClick={this.togglePersonHandler}>Toggle Person</button>
         {persons}
 
 
