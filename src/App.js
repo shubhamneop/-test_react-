@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Radium from 'radium';
 import Person from './Person/Person';
+import Classes from './Person/Person.module.css';
 
 class App extends Component {
   state = {
@@ -45,6 +46,7 @@ render() {
       //
       // }
     let persons = null;
+    let buttonClass =[Classes.button];
       if (this.state.showPerson) {
           persons = (
               <div>
@@ -66,24 +68,20 @@ render() {
                   {/*    changed={this.nameChangeHandle}></Person>*/}
               </div>
           );
-          // backgroundColor = 'red';
-          // style[':hover'] = {
-          //     backgroundColor: 'lightred',
-          //     color: 'black'
-          // }
+          buttonClass.push(Classes.red)
       }
-      const classes = [];
+      const assignClasses = [];
       if(this.state.persons.length <=2) {
-          classes.push('red');
+          assignClasses.push(Classes.red);
       }
       if (this.state.persons.length <=1) {
-          classes.push('bold');
+          assignClasses.push(Classes.bold);
       }
   return (
     <div className="App">
       <h1>React</h1>
-       <p className={classes.join(' ')}>This is style demo</p>
-      <button
+       <p className={assignClasses.join(' ')}>This is style demo</p>
+      <button className={buttonClass.join(' ')}
           onClick={this.togglePersonHandler}>Toggle Person</button>
         {persons}
 
