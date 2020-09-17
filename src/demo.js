@@ -1,7 +1,7 @@
 import React ,{ useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
-import Person from './Person/Person';
+import './Containers/App.css';
+import Person from './Components/Persons/Person/Person';
 
 const app = props => {
 // eslint-disable-next-line react-hooks/rules-of-hooks
