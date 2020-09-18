@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import Classes from "../Persons/Person/Person.module.css";
 
-const cockpit = (props) => {
+const cockpit = props => {
     const assignClasses = [];
     let buttonClass =[Classes.button];
     if (props.showPerson) {
@@ -19,8 +19,9 @@ const cockpit = (props) => {
         <p className={assignClasses.join(' ')}>This is style demo</p>
     <button className={buttonClass.join(' ')}
             onClick={ props.clicked}>Toggle Person</button>
+           <button className={Classes.button} onClick={props.login}>Log In</button>
         </div>
     );
 }
 
-export default cockpit;
+export default React.memo(cockpit);
