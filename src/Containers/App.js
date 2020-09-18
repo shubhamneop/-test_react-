@@ -6,6 +6,8 @@ import Person from '../Components/Persons/Person/Person';
 import Classes from '../Components/Persons/Person/Person.module.css';
 import Persons from "../Components/Persons/Persons";
 import Cockpit from '../Components/Cockpit/Cockpit';
+import withClass from '../hoc/withClass';
+import Aux from '../hoc/Aux';
 
 class App extends Component {
     constructor(props) {
@@ -78,7 +80,7 @@ render() {
       }
 
   return (
-    <div className="App">
+    <Aux>
       <Cockpit
           title ={this.props.title}
           showPerson={this.state.showPerson}
@@ -88,10 +90,10 @@ render() {
         {persons}
 
 
-    </div>
+    </Aux>
   );
   }
 
 }
 
-export default App;
+export default withClass(App,Classes.App);
